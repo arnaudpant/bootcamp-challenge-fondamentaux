@@ -5,7 +5,15 @@
 }
 
 body {
+    position: relative;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* LOGIN */
@@ -43,7 +51,8 @@ input[type=text]{
 }
 
 input[type=submit]{
-    height: 32px;
+    height: 40px;
+    padding: 8px;
     background-color: #343333;
     color:beige;
     font-size: 20px;
@@ -55,7 +64,8 @@ input[type=submit]{
 
 /* HEADER */
 
-header {
+header,
+footer {
     height: 64px;
     line-height: 64px;
     background-color: beige;
@@ -83,6 +93,9 @@ h1 {
 .card {
     height: 80px;
     width: 120px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 20px;
     margin: 16px;
     border-radius: 8px;
     cursor: pointer;
@@ -93,11 +106,10 @@ h1 {
     background-color: beige;
 }
 
-.card {
-    text-align: center;
-    line-height: 80px;
-    font-size: 20px;
+.card.select {
+    background-color: aquamarine;
 }
+
 
 .box-react {
     margin-top: 40px;
@@ -111,4 +123,37 @@ h1 {
 .box-react__input__input input {
     display: block;
     margin: 0 auto;
+}
+
+.box-valid {
+    margin-top: 20px;
+}
+
+/* MODAL */
+
+.modal {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+.modal h2 {
+    margin: 24px 0;
+    font-size: 32px;
+}
+
+.modal p {
+    margin: 16px 0;
+    font-size: 24px;
+}
+
+.modal li,
+.modal span {
+    font-size: 20px;
 }

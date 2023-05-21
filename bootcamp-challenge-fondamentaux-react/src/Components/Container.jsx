@@ -1,17 +1,25 @@
 import { useState } from "react";
+import Modal from "./Modal";
+
 
 const Container = () => {
     const [langages, setLangages] = useState([]);
     const [reactValue, setReactValue] = useState(50);
+    const [modalWindow, setModalWindow] = useState(false);
 
     const selectHandle = (e) => {
         const langageSelect = e.target.innerText;
         setLangages([...langages, langageSelect]);
+        e.target.classList.toggle("select");
     };
-    
+
     const handleRange = (e) => {
-        setReactValue(e.target.value)
-    }
+        setReactValue(e.target.value);
+    };
+
+    const handleEnd = () => {
+        setModalWindow(true);
+    };
 
     return (
         <div className="container">
@@ -43,8 +51,9 @@ const Container = () => {
                 </div>
             </div>
             <div className="box-valid">
-                <input type="submit" />
+                <input type="submit" value="Envoyer" onClick={handleEnd} />
             </div>
+            {modalWindow && <Modal langages={langages} reactValue={reactValue} />}
         </div>
     );
 };
