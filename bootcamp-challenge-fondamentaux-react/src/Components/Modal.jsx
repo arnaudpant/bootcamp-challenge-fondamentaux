@@ -1,5 +1,4 @@
-const Modal = ({langages, reactValue}) => {
-
+const Modal = ({ langages, reactValue }) => {
     return (
         <div className="modal">
             <h2>On récapitule:</h2>
